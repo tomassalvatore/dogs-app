@@ -2,53 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="connect-src 'self'; 
-      font-src 'self'; 
-      frame-src 'self'; 
-      img-src 'self'; 
-      manifest-src 'self'; 
-      media-src 'self'; 
-      object-src 'self'; 
-      script-src 'self'; 
-      style-src 'self'; 
-      worker-src 'self'"
-    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <style>
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-      }
-
-      .container {
-        border-radius: 10px;
-        box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
-        width: 500px;
-        background-color: blanchedalmond;
-        padding: 20px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .container img {
-        border-radius: 10px;
-        margin-bottom: 10px;
-      }
-
-      button {
-        background-color: white;
-        border: 1px solid #ccc;
-        padding: 5px 0;
-        border-radius: 10px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
   <body>
@@ -57,31 +15,6 @@
       <button id="next">Next dog</button>
     </div>
 
-    <script>
-      window.onload = function() {
-        fetchDog()
-        // select button
-        document.getElementById('next').onclick = function() {
-          fetchDog()
-        }
-
-        function fetchDog() {
-          fetch('https://dog.ceo/api/breeds/image/random')
-            .then(function(response) {
-              return response.json()
-            })
-            .then(responseData => {
-              console.log(responseData.message)
-              document.getElementById('dog-image-container').innerHTML = `
-                                                                                          <img
-                                                                                              src="${
-                                                                                                responseData.message
-                                                                                              }"
-                                                                                              alt="dog"
-                                                                                            />`
-            })
-        }
-      }
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
