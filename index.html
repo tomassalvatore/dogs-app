@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; font-src 'self' data: fonts.gstatic.com;"
+      content="default-src 'unsafe-inline'; font-src 'self' data: fonts.gstatic.com;"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -64,10 +64,12 @@
             .then(responseData => {
               console.log(responseData.message)
               document.getElementById('dog-image-container').innerHTML = `
-                                          <img
-                                              src="${responseData.message}"
-                                              alt="dog"
-                                            />`
+                                                <img
+                                                    src="${
+                                                      responseData.message
+                                                    }"
+                                                    alt="dog"
+                                                  />`
             })
         }
       }
