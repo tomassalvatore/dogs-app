@@ -7,10 +7,10 @@ body {
 .container {
   border-radius: 10px;
   box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
-  width: 500px;
+  max-width: 500px;
   background-color: blanchedalmond;
   padding: 20px;
-  margin: 0 auto;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,8 @@ body {
 
 .container img {
   border-radius: 10px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  margin: 5px 10px 10px 5px;
 }
 
 button {
